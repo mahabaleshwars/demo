@@ -20,5 +20,4 @@ jobs:
           jdkFile: ${{ runner.temp }}/java_package.tar.gz
           java-version: '11.0.0'
           architecture: x64
-      - name: Build with Maven
-        run: mvn clean install
+    
