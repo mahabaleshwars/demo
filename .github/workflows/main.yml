@@ -17,4 +17,5 @@ jobs:
           website: oracle.com
           release: 17
           version: 17.0.1
+          architecture: arm64
     
