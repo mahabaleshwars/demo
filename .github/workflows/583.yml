@@ -1,0 +1,33 @@
+name: 583 issue
+
+on:
+  pull_request:
+    branches:
+      [main]
+
+jobs:
+  gradle-wrapper-validation:
+    name: Gradle wrapper validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1.0.6
+  windows-test:
+      name: Kotlin Native tests for Windows
+      needs: gradle-wrapper-validation
+      runs-on: windows-latest
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Setup Java & Gradle
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - name: Test 'internal' subproject
+        run: ./gradlew :internal:windowsTest
+      - name: Test root project
+        run: ./gradlew :windowsTest
