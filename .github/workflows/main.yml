@@ -1,20 +1,22 @@
 name: Java Multiple JDK Demo
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04 
-    
+    runs-on: windows-latest
     name: Java sample
-    
     steps:
-      - uses: actions/setup-java@v4
-        with:
-          distribution: zulu
-          java-version: |
-            8
-            11
-            15
+    - name: Setting Microsoft JDK with caching
+      uses: mahabaleshwars/setup-java-arm64@main
+      with:
+        java-version: 17
+        distribution: microsoft
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+      
