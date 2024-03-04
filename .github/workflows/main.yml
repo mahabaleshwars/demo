@@ -1,5 +1,4 @@
-name: Java Multiple JDK Demo
-
+name: Java Tool Version File Testing
 on:
   workflow_dispatch:
   
