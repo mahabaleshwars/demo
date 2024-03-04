@@ -11,6 +11,7 @@ jobs:
     - name: Setting Microsoft JDK with caching
       uses: mahabaleshwars/setup-java@add-tool-version-file-support
       with:
-        java-version-file: '.tool-versions'
         distribution: microsoft
+        java-version-file: '.tool-versions'
+
 
