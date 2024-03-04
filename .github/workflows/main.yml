@@ -8,7 +8,7 @@ jobs:
     name: Java sample
     steps:
       - name: Setup java
-        uses: mahabaleshwars/setup-java@add-tool-version-file-support
+        uses: actions/setup-java@v4.1
         with:
           distribution: 'microsoft'
           java-version-file: '.java-version'
