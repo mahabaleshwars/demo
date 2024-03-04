@@ -9,14 +9,8 @@ jobs:
     name: Java sample
     steps:
     - name: Setting Microsoft JDK with caching
-      uses: mahabaleshwars/setup-java-arm64@main
+      uses: mahabaleshwars/setup-java@add-tool-version-file-support
       with:
-        java-version: 17
+        java-version-file: '.tool-versions'
         distribution: microsoft
-    - name: Cache Maven packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-      
+
