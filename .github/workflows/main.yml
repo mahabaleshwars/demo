@@ -12,7 +12,7 @@ jobs:
     name: Java ${{ matrix.Java }} sample
     steps:
       - name: Setup java
-        uses: mahabaleshwars/setup-java@add-tool-version-file-support
+        uses: mahabaleshwars/setup-java@main
         with:
           distribution: 'microsoft'
           # java-version: ${{ matrix.java }}
