@@ -12,5 +12,5 @@ jobs:
         uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
           distribution: 'microsoft'
-          java-version-file: '.java-version'
+          java-version-file: '.mahabaleshwar'
        
