@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup java
-        uses: mahabalehwars/setup-java@add-tool-version-file-support
+        uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
           distribution: 'microsoft'
           java-version-file: '.java-version'
