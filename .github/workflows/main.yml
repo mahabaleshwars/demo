@@ -11,6 +11,6 @@ jobs:
       - name: Setup java
         uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
-          distribution: microsoft
+          distribution: oracle
           java-version: 15.0.0-ea.2
        
