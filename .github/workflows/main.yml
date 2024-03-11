@@ -12,5 +12,5 @@ jobs:
         uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
           distribution: 'zulu'
-          java-version: 23.0.0+12
+          java-version: 21.0.2+13
        
