@@ -4,9 +4,6 @@ on:
   
 jobs:
   build:
-    strategy:
-      matrix:
-        version: [zulu,microsoft,temurin,adopt,oracle,coretto,semuru,dragonwell,liberica]
     runs-on: ubuntu-latest
     name: Java sample
     steps:
@@ -14,6 +11,6 @@ jobs:
       - name: Setup java
         uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
-          distribution: ${{matrix.version}}
+          distribution: zulu
           java-version: 15.0.0-ea.2
        
