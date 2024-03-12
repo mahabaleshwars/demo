@@ -12,5 +12,5 @@ jobs:
         uses: mahabaleshwars/setup-java@add-tool-version-file-support
         with:
           distribution: dragonwell
-          java-version: 15.0.0-ea.2
+          java-version: 15.0.0+2-ea
        
