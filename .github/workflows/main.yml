@@ -12,5 +12,5 @@ jobs:
         uses: mahabaleshwars/setup-java@test-for-java-version
         with:
           distribution: microsoft
-          java-version-file: ./src/main/.java-version
+          java-version-file: ./src/main/.java-versions
        
