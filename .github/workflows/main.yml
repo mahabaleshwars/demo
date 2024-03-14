@@ -11,6 +11,6 @@ jobs:
       - name: Setup java
         uses: mahabaleshwars/setup-java@test-for-java-version
         with:
-          distribution: temurin
-          java-version-file: .java-version
+          distribution: microsoft
+          java-version-file: ./src/main/.java-version
        
