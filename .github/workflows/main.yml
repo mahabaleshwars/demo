@@ -11,5 +11,5 @@ jobs:
       - name: Setup java
         uses: mahabaleshwars/setup-java@patch-java-version-file
         with:
-          distribution: microsoft
+          distribution: corretto
           java-version-file: .tool-versions
