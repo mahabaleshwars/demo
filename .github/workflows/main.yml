@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup java
-        uses: mahabaleshwars/setup-java@add-tool-version-file-support
+        uses: mahabaleshwars/setup-java@test-for-java-version
         with:
           distribution: temurin
           java-version: .java-version
