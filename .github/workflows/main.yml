@@ -12,5 +12,5 @@ jobs:
         uses: mahabaleshwars/setup-java@test-for-java-version
         with:
           distribution: temurin
-          java-version: .java-version
+          java-version-file: .java-version
        
