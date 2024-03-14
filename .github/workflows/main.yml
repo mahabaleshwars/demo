@@ -12,4 +12,4 @@ jobs:
         uses: mahabaleshwars/setup-java@patch-java-version-file
         with:
           distribution: microsoft
-          java-version-file: ./.java-version
+          java-version-file: ./src/main/.java-version
