@@ -7,5 +7,5 @@ node 20.0.1
     "node": "16.0.0"
   }
 }
-java corretto-21.0.2.13.1
+java corretto-17
 java 21
