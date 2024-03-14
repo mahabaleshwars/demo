@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup java
-        uses: mahabaleshwars/setup-java@test-for-java-version
+        uses: mahabaleshwars/setup-java@patch-java-version-file
         with:
           distribution: microsoft
-          java-version-file: ./src/main/.tool-version
+          java-version-file: ./src/main/.tool-versions
