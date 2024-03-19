@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup java
-        uses: mahabaleshwars/setup-java@enhance-performance
+        uses: actions/setup-java@v4
         with:
           distribution: corretto
           java-version-file: .tool-versions
