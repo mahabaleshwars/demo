@@ -20,5 +20,5 @@ jobs:
           distribution: 'adopt'
           cache: maven
           server-id: github
-          server-username: xxx
+          server-username: mahabaleshwars
           server-password: ${{ secrets.SERVER_TOKEN }}
