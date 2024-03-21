@@ -21,4 +21,4 @@ jobs:
           cache: maven
           server-id: github
           server-username: xxx
-          server-password: ${{ secrets.GITHUB_TOKEN }}
+          server-password: ${{ secrets.SERVER_TOKEN }}
