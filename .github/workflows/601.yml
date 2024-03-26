@@ -3,7 +3,8 @@ name : 601 error
 on:
   workflow_dispatch:
 
-publish:
+jobs:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
