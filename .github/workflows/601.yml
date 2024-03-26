@@ -1,0 +1,23 @@
+name : 601 error
+
+on:
+  workflow_dispatch:
+
+publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+      - uses: whelk-io/maven-settings-xml-action@v22
+        with:
+          repositories: >
+            [
+              {
+                  "id": "github",
+                  "url": "https://maven.pkg.github.com/mahabaleshwars/demo"
+              }
+            ]
