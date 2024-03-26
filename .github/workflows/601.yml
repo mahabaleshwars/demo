@@ -22,3 +22,15 @@ jobs:
                   "url": "https://maven.pkg.github.com/mahabaleshwars/demo"
               }
             ]
+          servers: >
+            [
+              {
+                "id":"github",
+                "username":"${{ github.actor }}",
+                "password":"${{ secrets.REPO_TOKEN }}"
+              }
+            ]
+      - name: Publish package
+        run: mvn --batch-mode -e -X deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
