@@ -33,4 +33,4 @@ jobs:
       - name: Publish package
         run: mvn --batch-mode -e -X deploy
         env:
-          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
