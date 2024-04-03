@@ -1,0 +1,24 @@
+
+name: CI 615 error
+on:
+  workflow_dispatch:
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version-file: .tool-versions
+          cache: sbt
+      - name: Build and Test
+        run: sbt -v +test
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "test-results/**/TEST-*.xml"
+        if: always()
