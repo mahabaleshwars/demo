@@ -14,5 +14,4 @@ jobs:
         with:
           distribution: zulu
           java-version-file: .tool-versions
-          cache: sbt
 
