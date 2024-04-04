@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          distribution: microsoft
+          distribution: corretto
           java-version-file: .tool-versions
