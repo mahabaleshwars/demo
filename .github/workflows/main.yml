@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
-          java-version: 'corretto-21.0.2'
+          java-version: 'microsoft-17.0.7'
