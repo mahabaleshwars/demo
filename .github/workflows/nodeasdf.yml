@@ -1,4 +1,4 @@
-name: Java Tool Version File Testing
+name: Node Tool Version File Testing
 on:
   workflow_dispatch:
   
