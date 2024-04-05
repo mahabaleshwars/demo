@@ -7,5 +7,5 @@ node 20.0.1
     "node": "16.0.0"
   }
 }
-java zulu-jre-22.28.91
+java zulu-20.32.11
 
