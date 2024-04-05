@@ -7,5 +7,6 @@ node 20.0.1
     "node": "16.0.0"
   }
 }
-java zulu-20.32.11
+java microsoft-17.0.7
+
 
