@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
-          java-version: 'microsoft-17.0.7'
+          java-version-file: .tool-versions
