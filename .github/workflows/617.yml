@@ -17,4 +17,4 @@ jobs:
       - name: Show Toolchain
         run: cat ~/.m2/toolchains.xml
       - name: Maven Install
-        run: mvn build -X
+        run: mvn clean install -X
