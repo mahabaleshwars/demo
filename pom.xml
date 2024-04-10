@@ -35,21 +35,50 @@
             <url>https://maven.pkg.github.com/mahabaleshwars/demo</url>
         </repository>
     </repositories>
-
-
-	<build>
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
-	<distributionManagement>
+     </build>
+     <distributionManagement>
 	<repository>
 		<id>github</id>
 		<name>GitHub Packages Repo</name>
 		<url>https://maven.pkg.github.com/mahabaleshwars/demo</url>
 	</repository>
-	</distributionManagement>
+     </distributionManagement>
+     <profile>
+	<id>strict-jdk-21</id>
+	<activation>
+		<jdk>[21,)</jdk>
+	</activation>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-toolchains-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>toolchain</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<toolchains>
+						<jdk>
+							<version>21</version>
+							<vendor>temurin</vendor>
+							<id>temurin_21</id>
+						</jdk>
+					</toolchains>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+      </profile>
 </project>
