@@ -1,0 +1,65 @@
+name: Integration
+
+on:
+  workflow_dispatch:
+  
+env:
+  CACHING: gradle
+  JAVA_DISTRIBUTION: temurin
+  JAVA_VERSION: 17
+  
+jobs:
+  # ---------- Stage 1 ----------
+  gradle-wrapper-validation:
+    name: Gradle wrapper validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1.0.6
+  static-code-analysis:
+    name: Static code analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Scan code
+        uses: JetBrains/qodana-action@v2023.2.8
+        with:
+          args: --fail-threshold,0
+          pr-mode: false
+  # ---------- Stage 2 ----------
+  js-test:
+    name: Kotlin/JS tests
+    needs: gradle-wrapper-validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Setup Java & Gradle
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: ${{ env.CACHING }}
+      - name: Test 'internal' subproject
+        run: ./gradlew :internal:jsTest
+      - name: Test root project
+        run: ./gradlew :jsTest
+  jvm-checks:
+    name: Kotlin/JVM checks
+    needs: gradle-wrapper-validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Setup Java & Gradle
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: ${{ env.CACHING }}
+   
+
+  
