@@ -2,6 +2,7 @@ name: 617 error
 
 on:
   workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,4 +18,4 @@ jobs:
       - name: Show Toolchain
         run: cat ~/.m2/toolchains.xml
       - name: Maven Install
-        run: mvn clean install -X
+        run: mvn clean install
