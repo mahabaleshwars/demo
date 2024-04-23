@@ -1,0 +1,29 @@
+name: 620 error
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read # default
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
+
+      - name: Test
+        run: cat ~/.m2/settings.xml
+
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn clean deploy -X
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
