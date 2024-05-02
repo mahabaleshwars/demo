@@ -8,6 +8,7 @@ jobs:
     strategy:
       matrix:
         distribution: ['microsoft', 'zulu', 'temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
+        version: [15-ea, 15.0.0-ea, 15.0.0-ea.2, 15.0.0+2-ea]
     name: Java sample
     steps:
       - name: Checkout Action
@@ -15,5 +16,5 @@ jobs:
       - name: Setup-Java 
         uses: actions/setup-java@v4
         with:
-          distribution: matrix.distribution
-          java-version: 17
+          distribution: ${{matrix.distribution}}
+          java-version: ${{matrix.version}}
