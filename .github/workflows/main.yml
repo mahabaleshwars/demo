@@ -16,4 +16,4 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: matrix.os
-          java-version: 17.0.7
+          java-version: 17
