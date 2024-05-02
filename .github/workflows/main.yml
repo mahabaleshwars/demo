@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distribution: ['microsoft', 'zulu', 'temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
+        distribution: ['microsoft', 'zulu', 'temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'semeru']
         version: [15-ea, 15.0.0-ea, 15.0.0-ea.2, 15.0.0+2-ea]
     name: Java sample
     steps:
