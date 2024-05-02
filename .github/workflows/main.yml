@@ -5,6 +5,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [15-ea, 15.0.0-ea, 15.0.0-ea.2, 15.0.0+2-ea]
+        os: ['microsoft', 'zulu', temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
     name: Java sample
     steps:
       - name: Checkout Action
@@ -12,5 +16,5 @@ jobs:
       - name: Setup-Java 
         uses: actions/setup-java@v4
         with:
-          distribution: 'oracle'
-          java-version: 15-ea
+          distribution: matrix.os
+          java-version: matrix.version
