@@ -12,5 +12,5 @@ jobs:
       - name: Setup-Java 
         uses: actions/setup-java@v4
         with:
-          distribution: 'microsoft'
+          distribution: 'oracle'
           java-version: 15-ea
