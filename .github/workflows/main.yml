@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: ['microsoft', 'zulu', temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
+        distribution: ['microsoft', 'zulu', 'temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
     name: Java sample
     steps:
       - name: Checkout Action
@@ -15,5 +15,5 @@ jobs:
       - name: Setup-Java 
         uses: actions/setup-java@v4
         with:
-          distribution: matrix.os
+          distribution: matrix.distribution
           java-version: 17
