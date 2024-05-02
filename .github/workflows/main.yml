@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         distribution: ['microsoft', 'zulu', 'temurin', 'oracle', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'semeru', 'dragonwell']
-        version: [17.0, 11.0, 11.0.4, 8.0.232, 8.0.282+8]
+        version: [8, 11, 16, 17, 21]
     name: Java sample
     steps:
       - name: Checkout Action
