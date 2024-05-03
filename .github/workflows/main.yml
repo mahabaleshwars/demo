@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         distribution: ['zulu', 'adopt', 'adopt-openj9']
-        version: [15.0.0-ea.2]
+        version: [15.0.0+2-ea]
     name: Java sample
     steps:
       - name: Checkout Action
