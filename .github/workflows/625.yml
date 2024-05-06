@@ -1,0 +1,14 @@
+name: 625 error
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Install Temurin 8 on macos
+    runs-on: macos-latest
+    steps:
+    - uses: actions/setup-java@v3
+      with:
+        distribution: "temurin"
+        java-version: "8"
