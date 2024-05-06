@@ -18,8 +18,8 @@ jobs:
       - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ inputs.version }}
-          distribution: ${{ inputs.distribution }}
+          java-version: ${{ matrix.version }}
+          distribution: ${{ matrix.distribution }}
           cache: maven
           overwrite-settings: false
 
@@ -46,8 +46,8 @@ jobs:
         - name: Setup JDK 17
           uses: actions/setup-java@v4
           with:
-            java-version: ${{ inputs.version }}
-            distribution: ${{ inputs.distribution }}
+            java-version: ${{ matrix.version }}
+            distribution: ${{ matrix.distribution }}
             cache: maven
             overwrite-settings: false
   
@@ -80,8 +80,8 @@ jobs:
           - name: Setup JDK 17
             uses: actions/setup-java@v4
             with:
-              java-version: ${{ inputs.version }}
-              distribution: ${{ inputs.distribution }}
+              java-version: ${{ matrix.version }}
+              distribution: ${{ matrix.distribution }}
               cache: maven
               overwrite-settings: false
     
