@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Install Temurin 8 on macos
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
     - uses: actions/setup-java@v3
       with:
