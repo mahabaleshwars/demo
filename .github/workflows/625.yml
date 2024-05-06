@@ -10,5 +10,5 @@ jobs:
     steps:
     - uses: actions/setup-java@v3
       with:
-        distribution: "temurin"
+        distribution: "oracle"
         java-version: "8"
