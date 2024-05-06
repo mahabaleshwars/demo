@@ -6,9 +6,9 @@ on:
 jobs:
   build:
     name: Install Temurin 8 on macos
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
     - uses: actions/setup-java@v3
       with:
         distribution: "temurin"
-        java-version: "8.0.412+8"
+        java-version: "8"
