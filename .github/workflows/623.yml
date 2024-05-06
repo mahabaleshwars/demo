@@ -22,7 +22,7 @@ jobs:
           distribution: ${{ matrix.distribution }}
           cache: maven
           overwrite-settings: false
-
+      - uses: whelk-io/maven-settings-xml-action@v22
       - name: Prepare Maven settings.xml
         run: |
           mkdir -p ~/.m2
