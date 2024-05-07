@@ -1,0 +1,15 @@
+name: 627 error
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+   runs-on: macos-latest
+   steps:
+     - name: Setup Scala
+       uses: actions/setup-java@v4
+       with:
+        distribution: 'adopt'
+        java-version: '21'
+        cache: 'sbt'
