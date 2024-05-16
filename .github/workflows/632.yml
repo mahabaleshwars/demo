@@ -22,7 +22,7 @@ jobs:
   
   codestyle:
       needs: build
-      runs-on: self-hosted
+      runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
         - name: set up JDK 17
@@ -37,7 +37,7 @@ jobs:
   
   test:
       needs: codestyle
-      runs-on: self-hosted
+      runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
         - name: set up JDK 17
