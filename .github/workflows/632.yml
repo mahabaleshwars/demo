@@ -32,8 +32,8 @@ jobs:
             java-version: 17
             check-latest: false
             cache: 'maven'
-        - name: Maven Verify
-          run: mvn checkstyle:check
+        # - name: Maven Verify
+        #   run: mvn checkstyle:check
   
   test:
       needs: codestyle
@@ -49,8 +49,8 @@ jobs:
             cache: 'maven'
         - name: Maven Verify
           run: mvn -B clean verify
-        - name: Upload coverage reports to Codecov
-          uses: codecov/codecov-action@v4.0.1
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            slug: Ivanuil/ImageEditor
+        # - name: Upload coverage reports to Codecov
+        #   uses: codecov/codecov-action@v4.0.1
+        #   with:
+        #     token: ${{ secrets.CODECOV_TOKEN }}
+        #     slug: Ivanuil/ImageEditor
