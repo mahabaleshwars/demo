@@ -32,8 +32,8 @@ jobs:
             java-version: 17
             check-latest: false
             cache: 'maven'
-        # - name: Maven Verify
-        #   run: mvn checkstyle:check
+        - name: Maven Verify
+          run: mvn checkstyle:check
   
   test:
       needs: codestyle
