@@ -1,0 +1,16 @@
+    name: Error 861 
+ 
+    on:
+      workflow_dispatch:
+    
+    jobs:
+      build:
+        runs-on: [self-hosted, linux, x64] # Specify the runner platform as Rocky Linux
+        container:
+          image: aswf/ci-base:2023
+        steps:
+        - name: Set up python 3.11
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+            cache: 'pip'
