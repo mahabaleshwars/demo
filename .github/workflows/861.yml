@@ -5,7 +5,7 @@
     
     jobs:
       build:
-        runs-on: [self-hosted, linux, x64] # Specify the runner platform as Rocky Linux
+        runs-on: [ linux, x64] # Specify the runner platform as Rocky Linux
         container:
           image: aswf/ci-base:2023
         steps:
