@@ -6,9 +6,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
 
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +15,4 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          cache: maven
-          server-id: github
-          server-username: mahabaleshwars
-          server-password: ${{ secrets.SERVER_TOKEN }}
+          
