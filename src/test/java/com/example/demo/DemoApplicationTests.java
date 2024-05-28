@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DemoApplicationTests {
 
     // Private constructor to prevent instantiation
-    private DemoApplication() {
+    private void DemoApplication() {
         // This constructor will prevent the class from being instantiated
         // since it's private and cannot be accessed from outside the class.
         // Utility classes should not have a public or default constructor.
