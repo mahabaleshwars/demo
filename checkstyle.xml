@@ -6,7 +6,6 @@
     <!-- Configure checks -->
     <module name="TreeWalker">
         <module name="JavadocStyle"/>
-        <module name="NewlineAtEndOfFile"/>
         <module name="EmptyBlock">
             <property name="option" value="TEXT"/>
             <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR"/>
