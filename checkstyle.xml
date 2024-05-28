@@ -4,27 +4,29 @@
 
 <module name="Checker">
     <!-- Configure checks -->
+    <module name="TreeWalker">
+        <module name="JavadocStyle"/>
+        <module name="NewlineAtEndOfFile"/>
+        <module name="EmptyBlock">
+            <property name="option" value="TEXT"/>
+            <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR"/>
+        </module>
+        <module name="EmptyCatchBlock"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
+        </module>
+        <module name="ParenPad"/>
+        <module name="MethodParamPad"/>
+        <module name="OperatorWrap"/>
+        <module name="SeparatorWrap"/>
+        <module name="NoLineWrap"/>
+        <module name="GenericWhitespace"/>
+    </module>
     <module name="FileTabCharacter"/>
-    <module name="JavadocStyle"/>
-    <module name="NewlineAtEndOfFile"/>
-    <module name="EmptyBlock">
-        <property name="option" value="TEXT"/>
-        <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR"/>
-    </module>
-    <module name="EmptyCatchBlock"/>
-    <module name="NoWhitespaceAfter"/>
-    <module name="NoWhitespaceBefore"/>
-    <module name="Indentation">
-        <property name="basicOffset" value="4"/>
-        <property name="braceAdjustment" value="0"/>
-        <property name="caseIndent" value="4"/>
-        <property name="throwsIndent" value="4"/>
-        <property name="lineWrappingIndentation" value="4"/>
-    </module>
-    <module name="ParenPad"/>
-    <module name="MethodParamPad"/>
-    <module name="OperatorWrap"/>
-    <module name="SeparatorWrap"/>
-    <module name="NoLineWrap"/>
-    <module name="GenericWhitespace"/>
 </module>
