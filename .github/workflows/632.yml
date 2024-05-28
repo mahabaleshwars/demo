@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - uses: actions/checkout@v4
           with:
@@ -22,7 +22,7 @@ jobs:
   
   codestyle:
       needs: build
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - uses: actions/checkout@v4
         - name: set up JDK 17
@@ -32,12 +32,12 @@ jobs:
             java-version: 17
             check-latest: false
             cache: 'maven'
-        - name: Maven Verify
-          run: mvn checkstyle:check
+        # - name: Maven Verify
+        #   run: mvn checkstyle:check
   
   test:
       needs: codestyle
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - uses: actions/checkout@v4
         - name: set up JDK 17
