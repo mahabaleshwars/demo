@@ -28,6 +28,29 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+	    <plugins>
+	        <!-- Add Checkstyle plugin -->
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-checkstyle-plugin</artifactId>
+	            <version>3.1.0</version>
+	            <executions>
+	                <execution>
+	                    <id>validate</id>
+	                    <phase>validate</phase>
+	                    <goals>
+	                        <goal>check</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	            <configuration>
+	                <configLocation>checkstyle.xml</configLocation>
+	                <!-- You can customize other configuration options here -->
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</build>
 	<distributionManagement>
 		<repository>
 		    <id>github</id>
