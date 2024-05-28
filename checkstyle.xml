@@ -27,5 +27,4 @@
         <module name="NoLineWrap"/>
         <module name="GenericWhitespace"/>
     </module>
-    <module name="FileTabCharacter"/>
 </module>
