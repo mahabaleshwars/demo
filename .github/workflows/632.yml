@@ -10,6 +10,10 @@ jobs:
         - uses: actions/checkout@v4
           with:
             persist-credentials: false
+        - name: Install Maven
+          run: |
+            sudo apt update
+            sudo apt install -y maven
         - name: set up JDK 17
           uses: actions/setup-java@v4.2.0
           with:
