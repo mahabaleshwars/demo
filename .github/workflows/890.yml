@@ -18,6 +18,10 @@ jobs:
           yum install -y tar gzip
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Apt Update
+        run: sudo apt-get update
+      - name: Install lsb-release
+        run: sudo apt-get install -y lsb-release
       - name: Run commands
         run: |
           echo "Hello, World!"
