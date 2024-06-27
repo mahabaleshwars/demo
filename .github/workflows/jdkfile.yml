@@ -1,0 +1,31 @@
+name: JDK File Path
+
+on:
+  workflow_dispatch:
+
+jobs:
+  jdk-file-usage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cache jdk binary
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/jdk
+          key: ${{ runner.os }}-jdk-11
+          restore-keys: ${{ runner.os }}-jdk
+
+      - name: retrieve latest corretto 11 jdk
+        run: |
+          test -d ${{ runner.temp }}/jdk || mkdir ${{ runner.temp }}/jdk
+          test -f ${{ runner.temp }}/jdk/amazon-corretto-11-x64-linux-jdk.tar.gz || ( wget -qP ${{ runner.temp }}/jdk https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz )
+          
+  
+      - name: Set up JDK 11 from file
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'jdkfile'
+          jdkFile: ${{ runner.temp }}/jdk/amazon-corretto-11-x64-linux-jdk.tar.gz
+          java-version: '11.0.0'
+          architecture: x64
+          cache: "maven"
