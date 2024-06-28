@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distribution: ['semeru']
-        version: [1.8.0.2]
+        distribution: ['zulu', 'adopt', 'adopt-openj9']
+        version: [15-ea, 15.0.0-ea]
     name: Java sample
     steps:
       - name: Checkout Action
