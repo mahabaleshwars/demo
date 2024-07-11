@@ -5,21 +5,13 @@ on:
 
 jobs:
   build_android:
-    name: Build Android
+    name: Build Java
     runs-on: self-hosted
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18.19.1"
-      - name: Setup Java
-        uses: actions/setup-java@v4.2.0
-        with:
-          java-version: 17.0.11
-          distribution: "oracle"
-          check-latest: false
-          cache: "gradle"
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+    - name: set up JDK 17
+      uses: actions/setup-java@v4.2.0
+      with:
+        distribution: 'oracle'
+        java-version: 17.0.11
+        check-latest: false
+        cache: 'maven'
