@@ -8,6 +8,16 @@ on:
 
 jobs:
   codeql-analysis-call:
-    uses: actions/reusable-workflows/.github/workflows/codeql-analysis.yml@main
-    with:
-      language: 'java'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+    - name: Code QL test
+      uses: actions/reusable-workflows/.github/workflows/codeql-analysis.yml@main
+      with:
+        language: 'java'
