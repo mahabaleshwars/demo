@@ -1,29 +1,24 @@
-name: Java CI with CodeQL Analysis
+name: CodeQL Analysis
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_call:
 
 jobs:
   analyze:
-    name: Analyze
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-       languages: "['java']"
-
-    - name: Build using Maven
-      run: ./mvnw clean package -DskipTests
-
-    - name: Perform CodeQL Analysis
-      uses: aparnajyothi-y/reusable-workflows/.github/workflows/codeql-analysis.yml@fix-codeql-failure
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'java'
+        
+      - name: Build project
+        run: ./mvnw clean package -DskipTests
+        
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
