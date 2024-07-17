@@ -9,6 +9,9 @@ on:
 jobs:
   codeql-analysis-call:
     uses: aparnajyothi-y/reusable-workflows/.github/workflows/codeql-analysis.yml@fix-codeql-failure
+    permissions:
+      actions: read
+      security-events: write
     with:
       languages: "['java']"
 
