@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: JetBrains Setup Java Test
-        uses: setup-java/gmitch215@main
+        uses: gmitch215/setup-java@main
         with:
             distribution: 'jetbrains'
             java-version: 21
