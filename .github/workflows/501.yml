@@ -1,0 +1,19 @@
+
+name: 501 PR
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Jet_Brains_Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: JetBrains Setup Java Test
+        uses: graalvm/setup-java@fniephaus/graalvm
+        with:
+            distribution: 'graalvm'
+            java-version: 21
+      - name: Verify Java installation
+        run: java -version
