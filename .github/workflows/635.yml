@@ -14,3 +14,5 @@ jobs:
         with:
             distribution: 'jetbrains'
             java-version: 21
+      - name: Verify Java installation
+        run: java -version
