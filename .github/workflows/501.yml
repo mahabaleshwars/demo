@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: JetBrains Setup Java Test
+      - name: GraalVM Setup Java Test
         uses: graalvm/setup-java@fniephaus/graalvm
         with:
             distribution: 'graalvm'
