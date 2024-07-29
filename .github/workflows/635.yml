@@ -1,0 +1,16 @@
+name: 635 PR
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Jet_Brains_Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: JetBrains Setup Java Test
+        uses: setup-java/gmitch215@main
+        with:
+            distribution: 'jetbrains'
+            java-version: 21
