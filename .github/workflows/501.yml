@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Jet_Brains_Test:
+  GraalVM_Test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
