@@ -5,7 +5,11 @@ on:
 
 jobs:
   Jet_Brains_Test:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
+        jdk: ['11','17','21']
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -13,6 +17,6 @@ jobs:
         uses: gmitch215/setup-java@main
         with:
             distribution: 'jetbrains'
-            java-version: 21
+            java-version: ${{matrix.jdk}}
       - name: Verify Java installation
         run: java -version
