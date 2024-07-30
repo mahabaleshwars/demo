@@ -18,7 +18,7 @@ jobs:
         uses: graalvm/setup-java@fniephaus/graalvm
         with:
             distribution: 'graalvm'
-            java-version-file: .tool-versions
+            java-version-file: ci.java-version
             cache: 'maven'
       - name: Verify Java installation
         run: java -version
