@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
-        jdk: ['11','17','21']
+        jdk: ['22','17','21']
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
