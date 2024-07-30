@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
-        jdk: ['21']
+        jdk: ['11','17','21']
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -19,6 +19,7 @@ jobs:
         with:
             distribution: 'graalvm'
             java-version: ${{matrix.jdk}}
+            cache: 'maven'
       - name: Verify Java installation
         run: java -version
       - name: Build with Maven
@@ -41,7 +42,7 @@ jobs:
               }
             ]
   
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        env:
-          GITHUB_TOKEN: ${{ github.token }} 
+      # - name: Publish to GitHub Packages Apache Maven
+      #   run: mvn deploy
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }} 
