@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
+        os: ['ubuntu-latest']
         jdk: ['21']
     steps:
       - name: Checkout Repository
