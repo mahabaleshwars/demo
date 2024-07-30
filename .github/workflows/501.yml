@@ -42,7 +42,7 @@ jobs:
               }
             ]
   
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        env:
-          GITHUB_TOKEN: ${{ github.token }} 
+      # - name: Publish to GitHub Packages Apache Maven
+      #   run: mvn deploy
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }} 
