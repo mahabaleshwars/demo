@@ -6,11 +6,11 @@ on:
 
 jobs:
   GraalVM_Test:
-    runs-on: ${{matrix.os}}
+    runs-on: 'ubuntu-latest'
     strategy:
       matrix:
-        os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
-        jdk: ['22','17','21']
+        # os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
+        # jdk: ['22','17','21']
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
         uses: graalvm/setup-java@fniephaus/graalvm
         with:
             distribution: 'graalvm'
-            java-version: ${{matrix.jdk}}
+            java-version-file: .java-version
             cache: 'maven'
       - name: Verify Java installation
         run: java -version
