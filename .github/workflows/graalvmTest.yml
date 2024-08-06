@@ -1,0 +1,17 @@
+name: GraalVM test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  GraalVM_Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: mahabaleshwars/setup-java-fniephaus-graalvm@main
+        with:
+          distribution: 'zulu'
+          java-version: '17'
