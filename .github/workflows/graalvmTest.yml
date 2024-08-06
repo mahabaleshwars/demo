@@ -15,3 +15,6 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
+
+      - name: Verify Java installation
+        run: java -version
