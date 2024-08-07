@@ -12,7 +12,7 @@ jobs:
       - name: Set up JDK
         uses: graalvm/setup-java@fniephaus/graalvm
         with:
-          distribution: 'sapmachine'
+          distribution: 'zulu'
           java-version: '21'
           cache: maven
       - name: Install GPG
