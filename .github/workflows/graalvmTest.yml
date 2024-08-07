@@ -13,7 +13,7 @@ jobs:
       - name: Setup Java
         uses: graalvm/setup-java@fniephaus/graalvm
         with:
-          distribution: 'zulu'
+          distribution: 'graalvm'
           java-version: '17'
 
       - name: Verify Java installation
